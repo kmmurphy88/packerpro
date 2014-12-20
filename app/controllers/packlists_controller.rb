@@ -16,7 +16,6 @@ class PacklistsController < ApplicationController
   def create
     params["packlist"]["weather"] = params["packlist"]["weather"].reject {|x| x.empty?}.join(",")
     @packlist = Packlist.new(packlist_params)
-    # raise 'the roof'
     if @packlist.save
       redirect_to packlist_path(@packlist)
     else
@@ -29,7 +28,6 @@ class PacklistsController < ApplicationController
   end
 
   def update
-    # raise 'the roof'
     if @packlist.update_attributes(update_packlist_params)
       redirect_to packlist_path(@packlist)
     else

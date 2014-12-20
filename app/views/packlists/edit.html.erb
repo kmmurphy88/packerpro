@@ -2,9 +2,11 @@
 
   <h3>Edit Items</h3>
   <div id="items">
+    <ul class="list-group row text-capitalize">
     <%= f.simple_fields_for :items do |item| %>
       <% render 'item_fields', :f => item %>
     <% end %>
+    </ul>
     <div class="links">
       <%= link_to_add_association "Add item", f, :items, class: "btn btn-info" %>
     </div>

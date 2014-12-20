@@ -7,41 +7,53 @@ class Packlist < ActiveRecord::Base
 
   def calculate_articles
     packlist = { }
-    basic_items = [:wallet, :id, :cash, :house_keys, :phone, :phone_charger, :toiletries]
+    basic_items = ["Wallet", "ID", "Cash", "House Keys", "Phone", "Phone Charger", "Toiletries"]
     basic_items.each do |item|
       packlist[item] = 1
     end
 
-    clothing = [:shirts, :pants, :shoes, :pairs_of_socks, :underwear, :pajamas]
+    clothing = ["Shirts", "Pants", "Shoes", "Pairs of Socks", "Underwear", "Pajamas"]
     clothing.each do |clothing|
       packlist[clothing] = 1 * self.how_long
     end
 
-    cold_clothing = [:jackets, :coats, :sweaters, :thermals, :boots, :beanies]
+    cold_clothing = ["Jackets", "Coats", "Sweaters", "Thermals", "Boots", "Beanies"]
       if self.weather.split(",").include? "Freezing"
         cold_clothing.each do |cold|
         packlist[cold] = 1 * self.how_long
         end
       end
 
-    cool_clothing = [:jackets, :sweaters, :beanies]
+    cool_clothing = ["Jackets", "Sweaters", "Beanies"]
       if self.weather.split(",").include? "Cool"
         cool_clothing.each do |cool|
           packlist[cool] = 1 * self.how_long
         end
       end
 
-    warm_clothing = [:tshirts, :shorts, :tennis_shoes, :ankle_socks, :hats, :sunglasses]
+    warm_clothing = ["T-shirts", "Shorts", "Tennis Shoes", "Ankle Socks", "Hats", "Sunglasses"]
       if self.weather.split(",").include? "Warm"
         warm_clothing.each do |warm|
         packlist[warm] = 1 * self.how_long
         end
       end
 
-    hot_clothing = [:tshirts, :shorts, :tank_tops, :sandals, :hats, :sunglasses]
+    hot_clothing = ["T-shirts", "Shorts", "Tank Tops", "Sandals"]
       if self.weather.split(",").include? "Blazing"
         hot_clothing.each do |hot|
         packlist[hot] = 1 * self.how_long
+        end
+      end
+
+      outdoor = ["Sunscreen", "Sunglasses", "Hats"]
+      indoor = ["Lounge Clothes"]
+      if self.activities == "Outdoor Activities"
+        outdoor.each do |outdoor|
+          packlist[outdoor] = 1 * self.how_long
+        end
+      elsif self.activities == "Indoor Activities"
+        indoor.each do |indoor|
+          packlist[indoor] = 1 * self.how_long
         end
       end
 

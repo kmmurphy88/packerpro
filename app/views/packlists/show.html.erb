@@ -1,6 +1,6 @@
 
     <h1 class="container text-center"><u>Your Packing List</u></h1><br>
-   
+
       <ul class="list-group row text-capitalize">
         <% @items.each do |item| %>
   	      <li class="list-group-item col-md-4">
@@ -13,8 +13,8 @@
 	      <% end %>
       </ul>
 
-  <button type="button" class="btn btn-default"><%= link_to 'Edit List', edit_packlist_path(@packlist) %></button>
-  
+  <%= link_to 'Edit List', edit_packlist_path(@packlist), class: "btn btn-warning" %>
+
 
     <%= simple_form_for @packlist, url: packlist_send_list_path(packlist_id: @packlist.id), method: :post do |f| %>
     <%= f.input :email %>

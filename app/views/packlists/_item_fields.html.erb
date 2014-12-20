@@ -1,7 +1,9 @@
 <div class="nested-fields">
+  <li class="list-group-item col-md-4">
+    <%= f.input :article %>
+    <%= f.input :quantity %>
+    <%= link_to_remove_association "remove item", f, class: "btn btn-danger" %>
+  </li>
 
-  <%= f.input :article %>
-  <%= f.input :quantity %>
-  <%= link_to_remove_association "remove item", f, class: "btn btn-danger" %>
 
 </div>
