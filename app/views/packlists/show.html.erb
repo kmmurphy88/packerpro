@@ -1,17 +1,16 @@
 
-    <h1 class="container">Your Packing List</h1>
-      <%= @packlist.where %>
-      <%= @packlist.how_long %>
-      <%= @packlist.weather %>
-      <%= @packlist.activities %>
+    <h1 class="container text-center"><u>Your Packing List</u></h1><br>
    
-      <ul>
+      <ul class="list-group row text-capitalize">
         <% @items.each do |item| %>
-	     <li>
-	      <%= item.article %>:
-	      <%= item.quantity %>
-	      </li>
-	    <% end %>
+  	      <li class="list-group-item col-md-4">
+    	      <%= item.article %>:
+              <span class="badge">
+    	          <%= item.quantity %>
+              </span>
+  	      </li>
+
+	      <% end %>
       </ul>
 
   <button type="button" class="btn btn-default"><%= link_to 'Edit List', edit_packlist_path(@packlist) %></button>
