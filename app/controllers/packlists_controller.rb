@@ -45,6 +45,7 @@ class PacklistsController < ApplicationController
   end
 
   def show
+    @items = @packlist.items
   end
 
   private
