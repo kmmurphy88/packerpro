@@ -2,3 +2,33 @@
 	color: white;
 }
 
+.pad-top{
+	padding-top: 50px;
+}
+
+.pad-10{
+	padding: 10px;
+}
+
+span label{
+	display: block !important;
+	input{
+		display: inline-block !important; 
+	}
+	label{
+		display: inline-block !important;
+		padding-left: 3px;
+	}
+}
+
+.form-control {
+	width: 50%;
+	background-color: rgb(239, 237, 237);
+}
+
+.my-button {
+	color: white;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+
+}
