@@ -5,6 +5,12 @@
 <%= @packlist.weather %>
 <%= @packlist.activities %>
 
-<%= link_to '' %>
-
+<ul>
+<% @items.each do |item| %>
+	<li>
+		<%= item.article %>:
+	  <%= item.quantity %>
+	</li>
+<% end %>
+</ul>
 

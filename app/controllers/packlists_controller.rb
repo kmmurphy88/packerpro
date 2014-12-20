@@ -45,7 +45,7 @@ class PacklistsController < ApplicationController
   end
 
   def show
-    @packlist = Packlist.find(params[:id])
+    @items = @packlist.items
   end
 
   private
