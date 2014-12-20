@@ -15,4 +15,10 @@
       </ul>
 
   <button type="button" class="btn btn-default"><%= link_to 'Edit List', edit_packlist_path(@packlist) %></button>
+  
 
+    <%= simple_form_for @packlist, url: packlist_send_list_path(packlist_id: @packlist.id), method: :post do |f| %>
+    <%= f.input :email %>
+    <%= f.button :submit, "Send me my list!" %>
+
+  <% end %>
