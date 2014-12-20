@@ -1,5 +1,5 @@
 class PacklistsController < ApplicationController
-  before_action :set_packlist only: [:show, :edit, :update, :destroy]
+  before_action :set_packlist, only: [:show, :edit, :update, :destroy]
 
   def new
     @packlist = Packlist.new
@@ -41,6 +41,7 @@ class PacklistsController < ApplicationController
   end
 
   def show
+    @packlist = Packlist.find(params[:id])
   end
 
   private
