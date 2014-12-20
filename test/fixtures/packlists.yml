@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  where: MyString
+  how_long: 1
+  weather: MyString
+  activities: MyText
+
+two:
+  where: MyString
+  how_long: 1
+  weather: MyString
+  activities: MyText
