@@ -6,7 +6,7 @@ class PacklistsController < ApplicationController
     @country_options = ["In Country", "Out of Country"]
     @temp = [["Freezing"], ["Cool"], ["Warm"], ["Blazing"]]
     @time_frame = (1..30).to_a
-    @activity_list = ['Outdoor Activities', 'Indoor Actvities']
+    @activity_list = ['Outdoor Activities', 'Indoor Activities']
   end
 
   # def index
