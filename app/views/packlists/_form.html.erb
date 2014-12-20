@@ -1,14 +1,14 @@
-<%= simple_form_for(@packlist) do |f| %>
+<%= simple_form_for(@packlist, class: 'vertical_form') do |f| %>
 
 	<%= f.input :where, as: :radio_buttons, collection: @country_options, label: 'Where are you traveling?'%>
 
-	<%= f.input :how_long, placeholder: 'Days',collection: @time_frame, label: 'How long is you trip?' %>
+	<%= f.input :how_long, prompt: 'Days', collection: @time_frame, label: 'How long is you trip?' %>
 
 	<%= f.label 'What is the weather supposed to be like?' %>
 
-	<%= f.collection_check_boxes :weather, @temp, :first, :last %>
+	<%= f.collection_check_boxes :weather, @temp, :first, :last, label_html: { class: "not-inline" } %>
 
-	<%= f.input :activities, collection: @activity_list, label: 'What kind of activities will you be doing?' %>
+	<%= f.input :activities, prompt: 'Options', collection: @activity_list, label: 'What kind of activities will you be doing?' %>
 
-	<%= f.button :submit %>
+	<%= f.button :submit, "Generate List", class: "my-button" %>
 <% end %>
