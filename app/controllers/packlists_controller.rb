@@ -4,7 +4,7 @@ class PacklistsController < ApplicationController
   def new
     @packlist = Packlist.new
     @country_options = ["In Country", "Out of Country"]
-    @temp = ["Freezing", "Cool", "Warm", "Blazin'"]
+    @temp = [["Freezing"], ["Cool"], ["Warm"], ["Blazing"]]
     @time_frame = (1..30).to_a
     @activity_list = ['Outdoor Activities', 'Indoor Actvities']
   end
@@ -14,7 +14,9 @@ class PacklistsController < ApplicationController
   # end
 
   def create
-    @packlist = Packlist.create(packlist_params)
+    params["packlist"]["weather"] = params["packlist"]["weather"].reject {|x| x.empty?}.join(",")
+    @packlist = Packlist.new(packlist_params)
+    # raise 'the roof'
     if @packlist.save
       redirect_to packlist_path(@packlist)
     else

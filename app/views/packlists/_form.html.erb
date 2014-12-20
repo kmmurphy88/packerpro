@@ -1,12 +1,14 @@
 <%= simple_form_for(@packlist) do |f| %>
-		 
+
 	<%= f.input :where, as: :radio_buttons, collection: @country_options, label: 'Where are you traveling?'%>
 
-	<%= f.input :how_long, placeholder: 'Days',collection: @time_frame, label: 'How long is you trip?'  %>
+	<%= f.input :how_long, placeholder: 'Days',collection: @time_frame, label: 'How long is you trip?' %>
 
-	<%= f.input :weather, collection: @temp, label: 'What is the weather suppose to be like?' %>
+	<%= f.label 'What is the weather supposed to be like?' %>
+
+	<%= f.collection_check_boxes :weather, @temp, :first, :last %>
 
 	<%= f.input :activities, collection: @activity_list, label: 'What kind of activities will you be doing?' %>
-		  
+
 	<%= f.button :submit %>
 <% end %>
