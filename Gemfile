@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'country_select'
 
 group :development, :test do
+  gem 'letter_opener'
   gem 'pry-rails'
   # gem 'pry-byebug'
   gem 'better_errors'

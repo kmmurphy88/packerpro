@@ -1,6 +1,6 @@
 class Packlist < ActiveRecord::Base
   has_many :items
-
+  attr_accessor :email
   after_create :calculate_articles
 
   def calculate_articles
