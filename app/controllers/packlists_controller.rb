@@ -5,9 +5,9 @@ class PacklistsController < ApplicationController
     @packlist = Packlist.new
   end
 
-  def index
-    @packlists = Packlist.all
-  end
+  # def index
+  #   @packlists = Packlist.all
+  # end
 
   def create
     @packlist = Packlist.create(packlist_params)
