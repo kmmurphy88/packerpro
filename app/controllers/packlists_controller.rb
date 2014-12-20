@@ -1,8 +1,12 @@
 class PacklistsController < ApplicationController
-  before_action :set_packlist only: [:show, :edit, :update, :destroy]
+  before_action :set_packlist, only: [:show, :edit, :update, :destroy]
 
   def new
     @packlist = Packlist.new
+    @country_options = ["In Country", "Out of Country"]
+    @temp = ["Freezing", "Cool", "Warm", "Blazin'"]
+    @time_frame = (1..30).to_a
+    @activity_list = ['Outdoor Activities', 'Indoor Actvities']
   end
 
   # def index
