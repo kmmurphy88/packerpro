@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'packlists/new'
+
+  get 'packlists/index'
+
+  get 'packlists/create'
+
+  get 'packlists/edit'
+
+  get 'packlists/update'
+
+  get 'packlists/destroy'
+
+  get 'packlists/show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
