@@ -17,6 +17,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'devise'
 gem 'simple_form'
 gem 'country_select'
+gem 'cocoon'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'letter_opener'

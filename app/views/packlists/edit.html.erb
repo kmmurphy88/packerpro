@@ -1,4 +1,15 @@
-<h1>Edit Your List</h1>
+<%= simple_form_for(@packlist) do |f| %>
 
-<%= render 'form' %>
-<%= link_to 'Back', packlist_path(@packlist) %>
+  <h3>Edit Items</h3>
+  <div id="items">
+    <%= f.simple_fields_for :items do |item| %>
+      <% render 'item_fields', :f => item %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association "Add item", f, :items, class: "btn btn-info" %>
+    </div>
+  </div>
+  <%= f.button :submit, class: "btn btn-success" %>
+<% end %>
+
+<%= link_to 'Back', packlist_path(@packlist), class: "btn btn-default" %>

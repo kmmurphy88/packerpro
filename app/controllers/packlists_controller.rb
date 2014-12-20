@@ -29,16 +29,15 @@ class PacklistsController < ApplicationController
   end
 
   def update
-    @packlist = Packlist.find(params[:id])
-    if @packlist.update_attributes(post_params)
-      redirect_to packlist_path(packlist)
+    # raise 'the roof'
+    if @packlist.update_attributes(update_packlist_params)
+      redirect_to packlist_path(@packlist)
     else
       render :edit
     end
   end
 
   def destroy
-    @packlist = Packlist.find(params[:id])
     if @packlist.destroy
       redirect_to packlist_path
     else
@@ -64,5 +63,9 @@ class PacklistsController < ApplicationController
 
   def packlist_params
     params.require(:packlist).permit(:where, :how_long, :weather, :activities)
+  end
+
+  def update_packlist_params
+    params.require(:packlist).permit(items_attributes: [:id, :article, :quantity, :_destroy])
   end
 end
