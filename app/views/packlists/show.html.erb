@@ -1,16 +1,18 @@
-<h1>Your Pack List</h1>
 
-<%= @packlist.where %>
-<%= @packlist.how_long %>
-<%= @packlist.weather %>
-<%= @packlist.activities %>
+    <h1 class="container">Your Packing List</h1>
+      <%= @packlist.where %>
+      <%= @packlist.how_long %>
+      <%= @packlist.weather %>
+      <%= @packlist.activities %>
+   
+      <ul>
+        <% @items.each do |item| %>
+	     <li>
+	      <%= item.article %>:
+	      <%= item.quantity %>
+	      </li>
+	    <% end %>
+      </ul>
 
-<ul>
-<% @items.each do |item| %>
-	<li>
-		<%= item.article %>:
-	  <%= item.quantity %>
-	</li>
-<% end %>
-</ul>
+  <button type="button" class="btn btn-default"><%= link_to 'Edit List', edit_packlist_path(@packlist) %></button>
 
