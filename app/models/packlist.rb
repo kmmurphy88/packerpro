@@ -1,6 +1,5 @@
 class Packlist < ActiveRecord::Base
   has_many :items
-  attr_accessor :email
   accepts_nested_attributes_for :items, reject_if: :all_blank, allow_destroy: true
 
   after_create :calculate_articles

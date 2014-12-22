@@ -47,11 +47,11 @@ class PacklistsController < ApplicationController
     @items = @packlist.items
   end
 
-  def send_list
-    @packlist = Packlist.find(params[:packlist_id])
-    PacklistMailer.list_email(params[:packlist][:email], @packlist.id).deliver
-    redirect_to @packlist, notice: 'Email sent!'
-  end
+  # def send_list
+  #   @packlist = Packlist.find(params[:packlist_id])
+  #   PacklistMailer.list_email(params[:packlist][:email], @packlist.id).deliver
+  #   redirect_to @packlist, notice: 'Email sent!'
+  # end
 
   private
 

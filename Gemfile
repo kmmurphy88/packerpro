@@ -21,7 +21,6 @@ gem 'cocoon'
 gem 'jquery-turbolinks'
 
 group :development, :test do
-  gem 'letter_opener'
   gem 'pry-rails'
   # gem 'pry-byebug'
   gem 'better_errors'
